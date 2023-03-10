@@ -14,6 +14,10 @@
   padding: 2rem 0;
 }
 
+.css-bayan__header {
+  margin-bottom: 1rem;
+}
+
 .accordion {
   width: 37.5rem;
   height: 20%;
@@ -23,6 +27,7 @@
 }
 
 .accordion__header {
+  color: #aaa;
   transition: all 0.2s ease-in-out;
 }
 
@@ -31,6 +36,7 @@
 }
 
 .accordion:hover .accordion__header {
+  /* color: #0078d7; */
   color: #fff;
 }
 
@@ -43,17 +49,21 @@
   border-radius: 3rem;
 }
 
+.accordion__item:first-child {
+  background: none;
+}
+
 .accordion__label {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background-color: blue;
+  background-color: #000;
   cursor: pointer;
   user-select: none;
   align-items: center;
   border-radius: 3rem;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
 }
 
 .accordion__meme {
@@ -61,19 +71,15 @@
   max-width: 20rem;
   align-self: center;
   margin: 1rem 0;
+  border-radius: 0.5rem;
 }
 
-.accordion__icon {
-  opacity: 0;
-  background-color: #fff;
-  width: 1.3rem;
-  height: 1.3rem;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
+.accordion__icon-closed {
+  display: block;
+}
+
+.accordion__icon-opened {
+  display: none;
 }
 
 .accordion__input {
@@ -81,6 +87,18 @@
   left: -100000px;
 }
 
-.accordion__input:checked + .accordion__meme {
+.accordion__input:checked ~ .accordion__meme {
   display: block;
+}
+
+.accordion__input:checked + .accordion__label .accordion__icon-opened {
+  display: block;
+}
+
+.accordion__input:checked + .accordion__label .accordion__icon-closed {
+  display: none;
+}
+
+.accordion__input:checked + .accordion__label .accordion__header {
+  color: #f7630c;
 }
