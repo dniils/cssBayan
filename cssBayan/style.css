@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.css-bayan {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.accordion {
+  width: 37.5rem;
+  height: 20%;
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* .accordion__title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+} */
+
+.accordion__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  font-size: 1.5rem;
+  /* margin-bottom: 1rem; */
+}
+
+.accordion__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background-color: blue;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion__meme {
+  max-width: 20rem;
+  align-self: center;
+  margin: 1rem 0;
+}
