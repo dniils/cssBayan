@@ -36,7 +36,6 @@
 }
 
 .accordion:hover .accordion__header {
-  /* color: #0078d7; */
   color: #fff;
 }
 
@@ -52,9 +51,10 @@
 
 .accordion__item:first-child {
   background: none;
+  cursor: unset;
 }
 
-.accordion__label {
+.accordion__tab {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -67,11 +67,15 @@
   border: 1px solid #fff;
 }
 
+.accordion__label {
+  cursor: pointer;
+}
+
 .accordion__meme {
   display: none;
   max-width: 20rem;
   align-self: center;
-  margin: 1rem 0;
+  margin: 3rem auto;
   border-radius: 0.5rem;
 }
 
@@ -89,12 +93,20 @@
   transition: all 0.5s ease-in-out;
 }
 
-.accordion__input:checked ~ .accordion__meme {
+.accordion__input:checked + .accordion__label .accordion__meme {
   display: block;
 }
 
-.accordion__input:checked + .accordion__label {
+.accordion__item:hover .accordion__label .accordion__meme {
+  display: block;
+}
+
+.accordion__input:checked + .accordion__label .accordion__tab {
   border: 3px solid #f7630c;
+}
+
+.accordion__input:checked + .accordion__label .accordion__header {
+  color: #f7630c;
 }
 
 .accordion__input:checked + .accordion__label .accordion__icon-opened {
@@ -103,12 +115,4 @@
 
 .accordion__input:checked + .accordion__label .accordion__icon-closed {
   display: none;
-}
-
-.accordion__input:checked + .accordion__label .accordion__header {
-  color: #f7630c;
-}
-
-.accordion__item:hover .accordion__input ~ .accordion__meme {
-  display: block;
 }
