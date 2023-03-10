@@ -47,6 +47,7 @@
   background-color: #f0efff;
   font-size: 1.5rem;
   border-radius: 3rem;
+  cursor: pointer;
 }
 
 .accordion__item:first-child {
@@ -85,10 +86,15 @@
 .accordion__input {
   position: absolute;
   left: -100000px;
+  transition: all 0.5s ease-in-out;
 }
 
 .accordion__input:checked ~ .accordion__meme {
   display: block;
+}
+
+.accordion__input:checked + .accordion__label {
+  border: 3px solid #f7630c;
 }
 
 .accordion__input:checked + .accordion__label .accordion__icon-opened {
@@ -101,4 +107,8 @@
 
 .accordion__input:checked + .accordion__label .accordion__header {
   color: #f7630c;
+}
+
+.accordion__item:hover .accordion__input ~ .accordion__meme {
+  display: block;
 }
