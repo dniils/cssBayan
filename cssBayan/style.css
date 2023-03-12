@@ -16,6 +16,7 @@
 
 .css-bayan__header {
   margin-bottom: 1rem;
+  user-select: none;
 }
 
 .accordion {
@@ -28,8 +29,8 @@
 
 .accordion__header {
   color: #aaa;
-  transition: all 0.15s ease-in-out;
   margin-right: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .accordion:hover .accordion__icon {
@@ -73,9 +74,8 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease-in-out;
 }
-
-/* check :ACTIVE :FOCUS */
 
 .accordion__meme {
   display: block;
@@ -83,9 +83,11 @@
   align-self: center;
   border-radius: 0.5rem;
   transition: all 0.5s ease-in-out;
+  user-select: none;
 }
 
 .accordion__icon {
+  opacity: 0;
   color: #fff;
   display: block;
   transition: all 0.2s ease-in-out;
@@ -94,7 +96,7 @@
 .accordion__input {
   position: absolute;
   left: -100000px;
-  transition: all 0.15s ease-in-out;
+  /* transition: all 0.15s ease-in-out; */
 }
 
 .accordion__input:checked + .accordion__label .accordion__meme {
@@ -105,6 +107,11 @@
 .accordion__label:hover .accordion__meme {
   max-height: 20rem;
   margin: 2rem 0;
+}
+
+.accordion__label:active {
+  border-radius: 3rem;
+  background-color: #f7620c17;
 }
 
 .accordion__input:checked + .accordion__label .accordion__icon {
