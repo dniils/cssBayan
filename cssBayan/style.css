@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu Mono", monospace;
+}
+
+.css-bayan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css-bayan__header {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  user-select: none;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.accordion {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.accordion__item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0efff;
+  font-size: 1rem;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.accordion__item:first-child {
+  background: none;
+  cursor: unset;
+}
+
+.accordion__tab {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #000;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  border-radius: 3rem;
+  outline: 1px solid #fff;
+  transition: all 0.15s ease-in-out;
+}
+
+.accordion__label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.accordion__header {
+  color: #aaa;
+  margin-right: 0.3rem;
+  transition: all 0.2s ease-in-out;
+  text-align: right;
+}
+
+.accordion__meme {
+  display: block;
+  max-height: 0rem;
+  align-self: center;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+  user-select: none;
+}
+
+.accordion__icon {
+  color: #fff;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  margin-right: 1rem;
+}
+
+.accordion__input {
+  position: absolute;
+  left: -100000px;
+}
+
+.accordion__input:checked + .accordion__label .accordion__meme {
+  max-height: 10rem;
+  margin: 1rem 0;
+}
+
+.accordion__label:active {
+  border-radius: 3rem;
+  background-color: #f7620c17;
+}
+
+.accordion__input:checked + .accordion__label .accordion__icon {
+  rotate: 90deg;
+  color: #f7630c;
+}
+
+.accordion__label:active .accordion__tab .accordion__icon,
+.accordion__label:active .accordion__tab .accordion__header {
+  scale: 1.15;
+}
+
+.accordion__input:checked + .accordion__label .accordion__tab {
+  outline: 3px solid #f7630c;
+  outline-offset: -3px;
+}
+
+.accordion__input:checked + .accordion__label .accordion__header {
+  color: #f7630c;
+}
+
+@media (min-width: 320px) {
+  .css-bayan__header {
+    font-size: 2rem;
+  }
+
+  .accordion {
+    width: 90%;
+    margin: 1rem;
+  }
+
+  .accordion__tab {
+    font-size: 1rem;
+  }
+
+  .accordion__item {
+    font-size: 1rem;
+  }
+
+  .accordion__header {
+    margin-right: 0.5rem;
+  }
+
+  .accordion__input:checked + .accordion__label .accordion__meme {
+    max-height: 15rem;
+    max-width: 15rem;
+    margin: 1rem 0;
+  }
+
+  .accordion__label:active .accordion__tab .accordion__icon,
+  .accordion__label:active .accordion__tab .accordion__header {
+    scale: 1.1;
+  }
+}
+
+@media (min-width: 820px) {
+  .accordion {
+    width: 60%;
+    margin: 2rem;
+  }
+
+  .css-bayan__header {
+    font-size: 2.5rem;
+  }
+
+  .accordion__tab {
+    font-size: 1.5rem;
+  }
+
+  .accordion__header {
+    margin-right: 1rem;
+  }
+
+  .accordion__input:checked + .accordion__label .accordion__meme {
+    max-height: 25rem;
+    max-width: 25rem;
+    margin: 1.5rem 0;
+  }
+
+  .accordion__label:active .accordion__tab .accordion__icon,
+  .accordion__label:active .accordion__tab .accordion__header {
+    scale: 1.15;
+  }
+}
+
+@media (min-width: 1920px) {
+  .accordion {
+    width: 40%;
+    margin: 3rem;
+  }
+
+  .css-bayan__header {
+    font-size: 3rem;
+  }
+
+  .accordion__tab {
+    font-size: 2rem;
+  }
+
+  .accordion__input:checked + .accordion__label .accordion__meme {
+    max-height: 30rem;
+    max-width: 30rem;
+    margin: 2rem 0;
+  }
+}
+
+@media (hover: hover) {
+  .accordion__icon {
+    opacity: 0;
+  }
+
+  .accordion:hover .accordion__icon {
+    opacity: 1;
+  }
+
+  .accordion:hover .accordion__header {
+    color: #fff;
+  }
+
+  .accordion__label:hover .accordion__tab .accordion__icon {
+    rotate: 90deg;
+  }
+
+  @media (min-width: 320px) {
+    .accordion__label:hover .accordion__meme {
+      max-height: 15rem;
+      max-width: 15rem;
+      margin: 1rem 0;
+    }
+  }
+
+  @media (min-width: 820px) {
+    .accordion__label:hover .accordion__meme {
+      max-height: 25rem;
+      max-width: 25rem;
+      margin: 1.5rem 0;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .accordion__label:hover .accordion__meme {
+      max-height: 30rem;
+      max-width: 30rem;
+      margin: 2rem 0;
+    }
+  }
+}
